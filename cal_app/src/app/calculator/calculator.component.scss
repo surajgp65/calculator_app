@@ -2,6 +2,7 @@
   max-width: 300px;
   margin: 3rem auto;
   .list-data {
+    min-height: 3rem;
     padding: 0rem;
     margin: 0rem;
     li {
@@ -15,6 +16,10 @@
         transition: 0.3s ease-in-outF;
       }
     }
+  }
+
+  .all-clear {
+    padding: 10px 20px !important;
   }
 }
 

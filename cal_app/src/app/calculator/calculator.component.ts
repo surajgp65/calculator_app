@@ -34,7 +34,7 @@ export class CalculatorComponent implements OnInit {
     { value: '=', display: '=', class: 'btn-outline-info' },
     { value: '+', display: '+', class: 'btn-outline-info' },
     { value: '', display: '', class: 'invisible' },
-    { value: '', display: '', class: 'invisible' },
+    { value: 'AC', display: 'AC', class: 'btn-outline-danger' },
     { value: 'C', display: 'C', class: 'btn-outline-danger' },
     { value: 'back', display: '←', class: 'btn-outline-warning' },
   ];
@@ -46,6 +46,8 @@ export class CalculatorComponent implements OnInit {
       this.clearResult();
     } else if (value === 'back') {
       this.removeLastCharacter();
+    } else if (value === 'AC') {
+      this.deleteAllList();
     } else {
       this.result += value;
     }
@@ -92,5 +94,16 @@ export class CalculatorComponent implements OnInit {
   }
   pushRes(data: any) {
     this.result = data;
+  }
+
+  deleteAllList() {
+    try {
+      this.http
+        .request('delete', '/calculate/deleteAll', null)
+        .subscribe((response: any) => {
+          this.clearResult();
+          this.getCalculation();
+        });
+    } catch (error) {}
   }
 }
