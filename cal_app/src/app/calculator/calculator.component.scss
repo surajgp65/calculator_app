@@ -1,0 +1,35 @@
+.calculator {
+  max-width: 300px;
+  margin: 3rem auto;
+  .list-data {
+    padding: 0rem;
+    margin: 0rem;
+    li {
+      cursor: pointer;
+      list-style: none;
+      text-align: right;
+      padding: 10px;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: rgb(238, 238, 238);
+        transition: 0.3s ease-in-outF;
+      }
+    }
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+button {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.c_button {
+  padding: 5px 29px;
+  font-size: 18px;
+}
